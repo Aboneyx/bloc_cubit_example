@@ -38,7 +38,6 @@ class UserList extends StatelessWidget {
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'Email: ${state.loadedUser[index].email}',

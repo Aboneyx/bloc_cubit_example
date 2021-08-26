@@ -4,9 +4,10 @@ class JsonClass {
   List<Tags>? get tags => _tags;
 
   JsonClass({
-      List<Tags>? tags}){
+    List<Tags>? tags,
+  }) {
     _tags = tags;
-}
+  }
 
   JsonClass.fromJson(dynamic json) {
     if (json["tags"] != null) {
@@ -18,13 +19,12 @@ class JsonClass {
   }
 
   Map<String, dynamic> toJson() {
-    var map = <String, dynamic>{};
+    final map = <String, dynamic>{};
     if (_tags != null) {
       map["tags"] = _tags?.map((v) => v.toJson()).toList();
     }
     return map;
   }
-
 }
 
 class Tags {
@@ -32,25 +32,23 @@ class Tags {
   int? _quantity;
 
   String? get name => _name;
+
   int? get quantity => _quantity;
 
-  Tags({
-      String? name, 
-      int? quantity}){
+  Tags({String? name, int? quantity}) {
     _name = name;
     _quantity = quantity;
-}
+  }
 
   Tags.fromJson(dynamic json) {
-    _name = json["name"];
-    _quantity = json["quantity"];
+    _name = json["name"] as String;
+    _quantity = json["quantity"] as int;
   }
 
   Map<String, dynamic> toJson() {
-    var map = <String, dynamic>{};
+    final map = <String, dynamic>{};
     map["name"] = _name;
     map["quantity"] = _quantity;
     return map;
   }
-
 }

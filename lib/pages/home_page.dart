@@ -1,5 +1,4 @@
 
-import 'package:bloc_cubit_example/bloc/user_bloc.dart';
 import 'package:bloc_cubit_example/cubit/user_cubit.dart';
 import 'package:bloc_cubit_example/services/user_repository.dart';
 import 'package:bloc_cubit_example/widgets/action_buttons.dart';
@@ -21,7 +20,6 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
         ),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             ActionButtons(),
             Expanded(child: UserList()),
